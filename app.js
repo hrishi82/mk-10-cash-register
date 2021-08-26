@@ -10,21 +10,28 @@ const availableNotes = [2000, 500, 100, 50, 10, 5, 1];
 
 checkButton.addEventListener("click", function validate() {
     
-    hidemessage(); //So that we don't always need to refresh page to enter a new amount
+    hidemessage();//So that we don't always need to refresh page to enter a new amount
 
-    if (billAmount.value > 0) {
-        if (cashGiven.value >= billAmount.value) {
-            const amountToBeReturned = cashGiven.value - billAmount.value;
-            calculateChange(amountToBeReturned);
+    var billType = Number(billAmount.value)
+    if (billAmount.value == billType){
+        if (billAmount.value > 0) {
+            if (cashGiven.value >= billAmount.value) {
+                const amountToBeReturned = cashGiven.value - billAmount.value;
+                calculateChange(amountToBeReturned);
+            }
+            else{
+                showMessage("Insufficient cash provided")
+            }
         }
+        
         else{
-            showMessage("Insufficient cash provided")
+            showMessage("Bill amount should be greater than 0");
         }
+    }else{
+        showMessage("Invalid input provided. Please enter a number");
     }
+ 
     
-    else{
-        showMessage("Bill amount should be greater than 0")
-    }
 })
 
 function calculateChange(amountToBeReturned){
@@ -45,6 +52,9 @@ function showMessage(msg){
     message.style.display = "block";
     message.innerText = msg;    
 }
+
+
+
 
 
 
