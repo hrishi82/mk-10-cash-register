@@ -1,7 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
 
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bck-color);
+}
+
+:root{
+    --bck-color: #6d6875;
+    --txt-color: #f4cdb2;
+    --btn-clr: #e5989b;
+}
 
 .container{
+    margin: auto;
     display: flex;
     flex-direction: column;
     width: 50vw;
 }
+
+.heading{
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+/* ----------- color section ----------- */
+.heading, .description {
+    color: var(--txt-color);
+    
+}
+
+
+/* ----------- Labels ----------- */
+.bill-amt  {
+    color: var(--txt-color);
+    margin: auto;
+    margin-top: 10px;
+    font-weight: bold;
+    
+}
+
+.cash-given-label{
+    color: var(--txt-color);
+    font-weight: bold;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+
+/* ----------- Input boxes ----------- */
+#bill-amount, #cash-given{
+    margin: auto;
+    border-radius: 0.5rem;
+    width:35%;;
+    padding: 0.8rem;
+    border: none;
+    margin-top: 10px;
+}
+
+
+
+
+/* ----------- Buttons ----------- */
+
+#btn-next-step{
+    margin: auto;
+    margin-top: 15px;
+    padding: 0.5rem;
+    width: 12%;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: var(--btn-clr);
+}
+
+#check-button{
+    margin: auto;
+    margin-top: 15px;
+    padding: 0.5rem;
+    width: 12%;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    background-color: var(--btn-clr);
+}
+
+
+/* ----------- Output ----------- */
+#error-message {
+    margin: auto;
+    margin-top: 60px;
+    font-weight: bold;
+    color: var(--txt-color);
+    text-align: center;
+}
+
+
+
+/* ----------- Table ----------- */
+
+.change-table{
+    margin: auto;
+    margin-top: 30px;
+    width: 70%;
+    color: black;
+    background-color: var(--txt-color);
+    
+}
+
+table, tr, th, td {
+  border: 1px solid black;
+  padding: 0.3rem;
+  
+
+}
+
+
+

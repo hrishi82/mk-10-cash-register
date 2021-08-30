@@ -12,13 +12,14 @@ const availableNotes = [2000, 500, 100, 50, 10, 5, 1];
 
 nextStepButton.addEventListener('click', function shownextstep(){
     
-    var billType = Number(billAmount.value)
-    if (billAmount.value == billType){
+    var billType = Number(billAmount.value);
+
+    if (billAmount.value == billType && billType>0){
         checkButton.style.display = "block";
         cashGiven.style.display = "block";
         cashGivenLabel.style.display = "block";
     }else{
-        showMessage("Invalid input provided. Please enter a number");
+        showMessage("Invalid input provided. \n Please enter a number and its value should be greater than 0");
     }
  
 })
@@ -31,6 +32,7 @@ checkButton.addEventListener("click", function validate() {
         if (cashGiven.value >= billAmount.value) {
             const amountToBeReturned = cashGiven.value - billAmount.value;
             calculateChange(amountToBeReturned);
+            showMessage("The number of each notes that you need to return is displayed below")
         }
         else{
             showMessage("Insufficient cash provided")
